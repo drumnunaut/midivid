@@ -1,0 +1,251 @@
+/* ═══════════════════════════════════════════════════════
+   STELLAR — Space-age theme utilities for MIDIVid
+   Replaces win95.css — same class names kept for compat
+   ═══════════════════════════════════════════════════════ */
+
+/* Starfield background */
+@keyframes starDrift {
+  0%   { transform: translateY(0) translateX(0); }
+  100% { transform: translateY(-120px) translateX(-40px); }
+}
+@keyframes starPulse {
+  0%, 100% { opacity: 0.6; }
+  50%       { opacity: 1; }
+}
+@keyframes nebulaDrift {
+  0%   { transform: scale(1) rotate(0deg); opacity: 0.15; }
+  50%  { transform: scale(1.05) rotate(3deg); opacity: 0.25; }
+  100% { transform: scale(1) rotate(0deg); opacity: 0.15; }
+}
+@keyframes scanline {
+  0%   { transform: translateY(-100%); }
+  100% { transform: translateY(100vh); }
+}
+
+.space-bg {
+  position: fixed;
+  inset: 0;
+  background: #050510;
+  overflow: hidden;
+}
+.space-bg::before {
+  content: '';
+  position: absolute;
+  inset: -50%;
+  background:
+    radial-gradient(ellipse 60% 40% at 20% 30%, rgba(0, 50, 130, 0.35) 0%, transparent 60%),
+    radial-gradient(ellipse 50% 60% at 80% 70%, rgba(80, 0, 160, 0.25) 0%, transparent 60%),
+    radial-gradient(ellipse 40% 50% at 55% 15%, rgba(0, 100, 180, 0.2) 0%, transparent 55%);
+  animation: nebulaDrift 18s ease-in-out infinite;
+  pointer-events: none;
+}
+.stars-layer {
+  position: absolute;
+  inset: 0;
+  background-image:
+    radial-gradient(1px 1px at 10% 15%, rgba(180,220,255,0.8) 0%, transparent 100%),
+    radial-gradient(1px 1px at 25% 40%, rgba(150,200,255,0.6) 0%, transparent 100%),
+    radial-gradient(2px 2px at 40% 8%,  rgba(200,230,255,0.9) 0%, transparent 100%),
+    radial-gradient(1px 1px at 60% 55%, rgba(160,210,255,0.7) 0%, transparent 100%),
+    radial-gradient(1px 1px at 75% 22%, rgba(180,220,255,0.8) 0%, transparent 100%),
+    radial-gradient(2px 2px at 85% 75%, rgba(200,230,255,0.5) 0%, transparent 100%),
+    radial-gradient(1px 1px at 90% 10%, rgba(150,200,255,0.9) 0%, transparent 100%),
+    radial-gradient(1px 1px at 5%  80%, rgba(180,220,255,0.6) 0%, transparent 100%),
+    radial-gradient(1px 1px at 50% 90%, rgba(160,210,255,0.7) 0%, transparent 100%),
+    radial-gradient(2px 2px at 30% 70%, rgba(200,230,255,0.4) 0%, transparent 100%),
+    radial-gradient(1px 1px at 68% 35%, rgba(170,215,255,0.8) 0%, transparent 100%),
+    radial-gradient(1px 1px at 18% 58%, rgba(150,200,255,0.6) 0%, transparent 100%),
+    radial-gradient(1px 1px at 92% 48%, rgba(190,225,255,0.5) 0%, transparent 100%),
+    radial-gradient(1px 1px at 45% 28%, rgba(175,215,255,0.7) 0%, transparent 100%),
+    radial-gradient(1px 1px at 78% 88%, rgba(160,210,255,0.6) 0%, transparent 100%);
+  background-size: 100% 100%;
+  animation: starPulse 4s ease-in-out infinite, starDrift 60s linear infinite;
+  pointer-events: none;
+}
+
+/* ── Glass Panels (replaces win95-outset) ── */
+.win95-outset,
+.glass-panel {
+  background: rgba(8, 15, 42, 0.92) !important;
+  border: 1px solid rgba(0, 212, 255, 0.2) !important;
+  box-shadow: 0 0 20px rgba(0, 212, 255, 0.06), inset 0 1px 0 rgba(255, 255, 255, 0.04) !important;
+  backdrop-filter: blur(12px) !important;
+  color: #c8e0ff !important;
+}
+
+/* ── Inset panels (replaces win95-inset) ── */
+.win95-inset,
+.glass-inset {
+  background: rgba(0, 5, 18, 0.75) !important;
+  border: 1px solid rgba(0, 212, 255, 0.12) !important;
+  box-shadow: inset 0 2px 8px rgba(0, 0, 0, 0.6) !important;
+  color: #c8e0ff !important;
+}
+
+/* ── Deep inset (replaces win95-deep-inset) ── */
+.win95-deep-inset,
+.glass-deep {
+  background: rgba(0, 3, 12, 0.85) !important;
+  border: 1px solid rgba(0, 212, 255, 0.1) !important;
+  box-shadow: inset 0 2px 12px rgba(0, 0, 0, 0.7) !important;
+  color: #c8e0ff !important;
+}
+
+/* ── Title bar (replaces win95-titlebar) ── */
+.win95-titlebar,
+.space-titlebar {
+  background: linear-gradient(90deg, rgba(0, 8, 30, 0.98) 0%, rgba(0, 25, 70, 0.98) 60%, rgba(0, 15, 50, 0.98) 100%) !important;
+  border-bottom: 1px solid rgba(0, 212, 255, 0.3) !important;
+  color: #00d4ff !important;
+  font-family: 'Orbitron', sans-serif !important;
+  font-weight: 600 !important;
+  font-size: 11px !important;
+  letter-spacing: 0.08em !important;
+  padding: 6px 10px !important;
+  box-shadow: 0 2px 16px rgba(0, 212, 255, 0.12) !important;
+}
+
+/* ── Buttons (replaces win95-button) ── */
+.win95-button,
+.space-btn {
+  background: rgba(0, 212, 255, 0.07) !important;
+  border: 1px solid rgba(0, 212, 255, 0.28) !important;
+  color: #00d4ff !important;
+  padding: 3px 10px !important;
+  font-size: 11px !important;
+  font-family: 'Inter', sans-serif !important;
+  cursor: pointer !important;
+  transition: background 0.15s ease, border-color 0.15s ease, box-shadow 0.15s ease !important;
+  border-radius: 3px !important;
+}
+.win95-button:hover,
+.space-btn:hover {
+  background: rgba(0, 212, 255, 0.16) !important;
+  border-color: rgba(0, 212, 255, 0.55) !important;
+  box-shadow: 0 0 10px rgba(0, 212, 255, 0.2) !important;
+}
+.win95-button:active,
+.win95-button.active,
+.win95-inset.bg-\[\#d0d0d0\],
+.win95-inset.bg-\[\#e0e0e0\],
+.space-btn:active {
+  background: rgba(0, 212, 255, 0.22) !important;
+  border-color: rgba(0, 212, 255, 0.7) !important;
+  box-shadow: 0 0 16px rgba(0, 212, 255, 0.35), inset 0 0 8px rgba(0, 212, 255, 0.12) !important;
+  padding: 3px 10px !important;
+}
+.win95-button:disabled,
+.space-btn:disabled {
+  color: rgba(0, 212, 255, 0.25) !important;
+  border-color: rgba(0, 212, 255, 0.1) !important;
+  cursor: not-allowed !important;
+  box-shadow: none !important;
+}
+
+/* ── Menu styles ── */
+.win95-menu {
+  background: rgba(5, 10, 30, 0.97) !important;
+  border: 1px solid rgba(0, 212, 255, 0.25) !important;
+  backdrop-filter: blur(16px) !important;
+}
+.win95-menu-item {
+  padding: 4px 10px !important;
+  cursor: default !important;
+  color: #c8e0ff !important;
+  font-size: 12px !important;
+  transition: background 0.1s !important;
+}
+.win95-menu-item:hover {
+  background: rgba(0, 212, 255, 0.14) !important;
+  color: #00d4ff !important;
+}
+
+/* ── Groove divider ── */
+.win95-groove,
+.space-divider {
+  border: none !important;
+  border-left: 1px solid rgba(0, 212, 255, 0.18) !important;
+  box-shadow: 1px 0 0 rgba(0, 0, 0, 0.5) !important;
+}
+
+/* ── Accent button (green) ── */
+.space-btn-green {
+  background: rgba(0, 255, 136, 0.08) !important;
+  border: 1px solid rgba(0, 255, 136, 0.3) !important;
+  color: #00ff88 !important;
+  border-radius: 3px !important;
+  transition: all 0.15s ease !important;
+}
+.space-btn-green:hover {
+  background: rgba(0, 255, 136, 0.18) !important;
+  box-shadow: 0 0 10px rgba(0, 255, 136, 0.25) !important;
+}
+
+/* ── Neon progress bar ── */
+.space-progress-track {
+  background: rgba(0, 5, 20, 0.8);
+  border: 1px solid rgba(0, 212, 255, 0.15);
+  border-radius: 2px;
+  overflow: hidden;
+  cursor: pointer;
+}
+.space-progress-fill {
+  background: linear-gradient(90deg, #00d4ff, #00a8cc);
+  box-shadow: 0 0 8px rgba(0, 212, 255, 0.5);
+  height: 100%;
+  transition: width 0.1s linear;
+}
+
+/* ── Range slider ── */
+input[type="range"] {
+  accent-color: #00d4ff !important;
+  cursor: pointer;
+}
+
+/* ── Select dropdown ── */
+select {
+  background: rgba(0, 5, 20, 0.85) !important;
+  border: 1px solid rgba(0, 212, 255, 0.2) !important;
+  color: #c8e0ff !important;
+  border-radius: 3px !important;
+  outline: none !important;
+  cursor: pointer !important;
+  padding: 2px 4px !important;
+  font-size: 11px !important;
+}
+select:focus {
+  border-color: rgba(0, 212, 255, 0.5) !important;
+  box-shadow: 0 0 8px rgba(0, 212, 255, 0.15) !important;
+}
+select option {
+  background: #0a0f28 !important;
+  color: #c8e0ff !important;
+}
+
+/* ── Number / text input ── */
+input[type="number"],
+input[type="text"] {
+  background: rgba(0, 5, 20, 0.85) !important;
+  border: 1px solid rgba(0, 212, 255, 0.2) !important;
+  color: #c8e0ff !important;
+  border-radius: 3px !important;
+  outline: none !important;
+}
+input[type="number"]:focus,
+input[type="text"]:focus {
+  border-color: rgba(0, 212, 255, 0.5) !important;
+  box-shadow: 0 0 8px rgba(0, 212, 255, 0.15) !important;
+}
+
+/* ── Glow animation for active elements ── */
+@keyframes glowPulse {
+  0%, 100% { box-shadow: 0 0 8px rgba(0, 212, 255, 0.3); }
+  50%       { box-shadow: 0 0 18px rgba(0, 212, 255, 0.6); }
+}
+.glow-pulse { animation: glowPulse 2s ease-in-out infinite; }
+
+@keyframes greenGlowPulse {
+  0%, 100% { box-shadow: 0 0 6px rgba(0, 255, 136, 0.4); }
+  50%       { box-shadow: 0 0 14px rgba(0, 255, 136, 0.8); }
+}
+.glow-pulse-green { animation: greenGlowPulse 1.5s ease-in-out infinite; }

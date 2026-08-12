@@ -1,0 +1,43 @@
+<svg width="512" height="512" viewBox="0 0 512 512" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background -->
+  <rect width="512" height="512" rx="96" fill="#000080"/>
+  <!-- Subtle grid -->
+  <rect width="512" height="512" rx="96" fill="url(#grid)" opacity="0.08"/>
+  <defs>
+    <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
+      <path d="M 40 0 L 0 0 0 40" fill="none" stroke="white" stroke-width="0.8"/>
+    </pattern>
+    <filter id="glow">
+      <feGaussianBlur stdDeviation="4" result="blur"/>
+      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+  </defs>
+
+  <!-- Waveform (oscilloscope line) -->
+  <path d="M 48 200 C 80 130, 120 130, 152 200 C 184 270, 224 270, 256 200 C 288 130, 328 130, 360 200 C 392 270, 432 270, 464 200"
+        stroke="#00FFCC" stroke-width="14" stroke-linecap="round" fill="none" filter="url(#glow)" opacity="0.95"/>
+
+  <!-- "MIDIVid" wordmark -->
+  <text x="256" y="100" text-anchor="middle" fill="white" font-family="'Courier New', monospace"
+        font-size="62" font-weight="900" letter-spacing="-2" opacity="0.95">MIDIVid</text>
+
+  <!-- Piano keyboard panel -->
+  <rect x="40" y="310" width="432" height="162" rx="8" fill="#C0C0C0" stroke="#808080" stroke-width="2"/>
+
+  <!-- White keys (7) -->
+  <rect x="48"  y="318" width="52" height="146" rx="4" fill="white" stroke="#888" stroke-width="1"/>
+  <rect x="106" y="318" width="52" height="146" rx="4" fill="white" stroke="#888" stroke-width="1"/>
+  <rect x="164" y="318" width="52" height="146" rx="4" fill="white" stroke="#888" stroke-width="1"/>
+  <!-- Glowing active key -->
+  <rect x="222" y="318" width="52" height="146" rx="4" fill="#00FFCC" stroke="#00CC99" stroke-width="1" filter="url(#glow)" opacity="0.95"/>
+  <rect x="280" y="318" width="52" height="146" rx="4" fill="white" stroke="#888" stroke-width="1"/>
+  <rect x="338" y="318" width="52" height="146" rx="4" fill="white" stroke="#888" stroke-width="1"/>
+  <rect x="396" y="318" width="56" height="146" rx="4" fill="white" stroke="#888" stroke-width="1"/>
+
+  <!-- Black keys -->
+  <rect x="80"  y="318" width="34" height="96" rx="3" fill="#111"/>
+  <rect x="138" y="318" width="34" height="96" rx="3" fill="#111"/>
+  <rect x="254" y="318" width="34" height="96" rx="3" fill="#111"/>
+  <rect x="312" y="318" width="34" height="96" rx="3" fill="#111"/>
+  <rect x="370" y="318" width="34" height="96" rx="3" fill="#111"/>
+</svg>

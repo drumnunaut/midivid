@@ -1,0 +1,40 @@
+{
+  "name": "MIDIVid — Synthesizer & Visualizer",
+  "short_name": "MIDIVid",
+  "description": "Windows 95-style MIDI synthesizer and visualizer. Assign images and video to piano keys, stream to OBS, and perform live with custom hotkeys.",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "orientation": "landscape",
+  "background_color": "#008080",
+  "theme_color": "#000080",
+  "categories": ["music", "entertainment", "productivity"],
+  "icons": [
+    {
+      "src": "/icon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any"
+    },
+    {
+      "src": "/icon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "maskable"
+    },
+    {
+      "src": "/favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml"
+    }
+  ],
+  "screenshots": [],
+  "shortcuts": [
+    {
+      "name": "Open MIDIVid",
+      "short_name": "Open",
+      "description": "Launch the synthesizer",
+      "url": "/"
+    }
+  ]
+}

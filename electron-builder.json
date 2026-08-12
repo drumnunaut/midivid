@@ -1,0 +1,51 @@
+{
+  "appId": "com.midivid.app",
+  "productName": "MIDIVid",
+  "executableName": "MIDIVid",
+  "copyright": "Copyright © 2026 MIDIVid",
+  "directories": {
+    "output": "dist-electron/installer",
+    "buildResources": "build-resources"
+  },
+  "files": [
+    "dist-electron/renderer/**",
+    "dist-electron/main.cjs",
+    "dist-electron/preload.cjs",
+    "package.json"
+  ],
+  "extraMetadata": {
+    "main": "dist-electron/main.cjs"
+  },
+  "publish": {
+    "provider": "github",
+    "owner": "drumnunaut",
+    "repo": "midivid",
+    "releaseType": "release"
+  },
+  "win": {
+    "target": [{ "target": "zip", "arch": ["x64"] }],
+    "icon": "build-resources/icon.ico",
+    "signtoolOptions": {
+      "signingHashAlgorithms": ["sha256"],
+      "rfc3161TimeStampServer": "http://timestamp.digicert.com",
+      "sign": null
+    }
+  },
+  "linux": {
+    "target": [{ "target": "AppImage", "arch": ["x64"] }],
+    "icon": "build-resources/icon.png",
+    "category": "Audio"
+  },
+  "mac": {
+    "target": [
+      { "target": "dmg", "arch": ["x64", "arm64"] },
+      { "target": "zip", "arch": ["x64", "arm64"] }
+    ],
+    "icon": "build-resources/icon-1024.png",
+    "category": "public.app-category.music",
+    "extendInfo": {
+      "NSMicrophoneUsageDescription": "MIDIVid uses the microphone to drive audio-reactive visual effects.",
+      "NSCameraUsageDescription": "MIDIVid can show your camera as a visual layer assigned to piano keys."
+    }
+  }
+}

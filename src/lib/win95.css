@@ -1,0 +1,97 @@
+/* Windows 95 Bevel Effects */
+.win95-outset {
+  background-color: #c0c0c0;
+  border-style: solid;
+  border-width: 2px;
+  border-top-color: #dfdfdf;
+  border-left-color: #dfdfdf;
+  border-bottom-color: #000000;
+  border-right-color: #000000;
+  box-shadow: inset -1px -1px #808080, inset 1px 1px #ffffff;
+}
+
+.win95-inset {
+  background-color: #c0c0c0;
+  border-style: solid;
+  border-width: 2px;
+  border-top-color: #808080;
+  border-left-color: #808080;
+  border-bottom-color: #ffffff;
+  border-right-color: #ffffff;
+  box-shadow: inset 1px 1px #000000, inset -1px -1px #dfdfdf;
+}
+
+.win95-deep-inset {
+  background-color: #ffffff;
+  border-style: solid;
+  border-width: 2px;
+  border-top-color: #808080;
+  border-left-color: #808080;
+  border-bottom-color: #dfdfdf;
+  border-right-color: #dfdfdf;
+  box-shadow: inset 1px 1px #000000;
+}
+
+.win95-titlebar {
+  background: linear-gradient(to right, #000080, #1084d0); /* Close to classic active gradient */
+  color: white;
+  font-weight: bold;
+  padding: 2px 4px;
+}
+
+.win95-titlebar.inactive {
+  background: linear-gradient(to right, #808080, #b5b5b5);
+}
+
+.win95-button {
+  background-color: #c0c0c0;
+  border-style: solid;
+  border-width: 2px;
+  border-top-color: #dfdfdf;
+  border-left-color: #dfdfdf;
+  border-bottom-color: #000000;
+  border-right-color: #000000;
+  box-shadow: inset -1px -1px #808080, inset 1px 1px #ffffff;
+  color: #000000;
+  padding: 2px 8px;
+  font-size: 11px;
+  cursor: default; /* Win95 default cursor for buttons */
+}
+
+.win95-button:active,
+.win95-button.active {
+  border-top-color: #000000;
+  border-left-color: #000000;
+  border-bottom-color: #dfdfdf;
+  border-right-color: #dfdfdf;
+  box-shadow: inset 1px 1px #808080;
+  padding: 3px 7px 1px 9px; /* Shift content down/right when pressed */
+}
+
+.win95-button:disabled {
+  color: #808080;
+  text-shadow: 1px 1px #ffffff;
+}
+
+.win95-menu {
+  background-color: #c0c0c0;
+  border: 1px solid #c0c0c0;
+}
+
+.win95-menu-item {
+  padding: 2px 6px;
+  cursor: default;
+}
+.win95-menu-item:hover {
+  background-color: #000080;
+  color: white;
+}
+
+.win95-groove {
+  border-style: solid;
+  border-width: 2px;
+  border-top-color: #808080;
+  border-left-color: #808080;
+  border-bottom-color: #ffffff;
+  border-right-color: #ffffff;
+}
